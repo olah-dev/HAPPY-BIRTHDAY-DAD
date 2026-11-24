@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Dad</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Poppins',sans-serif;background:#11111f;color:#fff;text-align:center}
+img{display:block;width:100%}
+.hero{position:relative;width:100%;height:95vh;min-height:600px;overflow:hidden;background:#000}
+.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 18%}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(to top, rgba(0,0,0,.96) 0%, rgba(0,0,0,.35) 38%, rgba(0,0,0,.02) 65%);display:flex;flex-direction:column;justify-content:flex-end;padding:26px 22px 30px}
+.hero small{letter-spacing:3px;color:#ffcc00;font-weight:800;font-size:11px}
+.hero h1{font-family:'Playfair Display',serif;font-size:54px;line-height:0.95;margin:12px 0;text-align:left}
+.hero h1 span{color:#ffcc00;font-style:italic}
+.hero p{color:#eee;font-size:15px;line-height:1.5;text-align:left}
+.scroll{margin-top:18px;background:#ffcc00;color:#000;padding:14px 20px;border-radius:100px;font-weight:800;font-size:14px;border:none;width:100%;cursor:pointer}
+.wrap{padding:0 20px 40px;max-width:540px;margin:0 auto}
+.main-photo{width:100%;height:auto;aspect-ratio:3/4;object-fit:cover;object-position:center 15%;border-radius:22px;border:3px solid #ffcc00;margin-top:22px;background:#000}
+.caption{color:#aaa;font-size:13px;margin:10px 0 22px}
+.card{background:#1e1e32;border:1px solid #333355;padding:22px;border-radius:22px;text-align:left;line-height:1.7;margin-bottom:18px}
+.card h2{color:#ffcc00;margin-bottom:10px;font-size:20px}
+.card p{color:#eee;font-size:15px}
+.quote{font-family:'Playfair Display',serif;font-size:25px;line-height:1.35;padding:18px 5px}
+.pill{display:inline-block;background:#ffcc00;color:#000;padding:8px 14px;border-radius:100px;font-weight:700;font-size:13px;margin:4px 2px}
+.btn{width:100%;padding:16px;border-radius:14px;border:none;font-weight:800;font-size:16px;cursor:pointer;margin-top:12px}
+.btn-gold{background:#ffcc00;color:#000}
+.btn-white{background:#fff;color:#000}
+#letter{display:none}
+.footer{padding:20px 0 10px;color:#888;font-size:13px}
+.confetti{position:fixed;top:-10px;z-index:999;pointer-events:none;animation:fall linear forwards}
+@keyframes fall{to{transform:translateY(110vh) rotate(360deg)}}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <img src="dad.jpg" alt="Dad">
+  <div class="hero-overlay">
+    <small>✦ A SPECIAL DAY FOR A SPECIAL MAN ✦</small>
+    <h1>Happy<br>Birthday<br><span>Dad.</span></h1>
+    <p>My hero. My provider. My biggest blessing.</p>
+    <button class="scroll" onclick="document.getElementById('main').scrollIntoView({behavior:'smooth'})">Scroll For Your Surprise ↓</button>
+  </div>
+</div>
+
+<div id="main" class="wrap">
+  <img class="main-photo" src="feem_1bc106212359a_IMG-20261124-WA2460.jpg" alt="Dad">
+  <p class="caption">The man who gives everything, even when it costs him everything.</p>
+
+  <div class="card">
+    <h2>👑 Why Today Is About You</h2>
+    <p>You are the best dad. You always do your best to provide for our needs, even when you have to inconvenience yourself for that.</p>
+    <p style="margin-top:10px">You go without, so we can have. You stay strong, so we don't have to worry. Today, we see you. Today, we celebrate you.</p>
+  </div>
+
+  <div class="quote">"A father is someone you look up to no matter how tall you grow." ❤️</div>
+
+  <div class="card">
+    <h2>💌 My Letter To You</h2>
+    <p id="preview">Dad, I wrote something from my heart. Tap to open it...</p>
+    <div id="letter">
+      <p>Dear Dad,</p><br>
+      <p>Happy Birthday.</p>
+      <p>Thank you for all the sacrifices nobody sees. Thank you for loving us in actions, not just words.</p>
+      <p>I pray God gives you long life, good health, peace of mind, and plenty to enjoy the fruits of your labour. You will not labour in vain.</p>
+      <p>And today, no serious face o 😂 — today you are the King. Eat, laugh, and let us spoil you small.</p>
+      <p><b>I love you, Dad. Happy Birthday, my Hero.</b></p>
+      <p style="text-align:right;margin-top:10px">— From Me ❤️</p>
+    </div>
+    <button class="btn btn-gold" onclick="document.getElementById('letter').style.display='block';document.getElementById('preview').style.display='none';this.style.display='none';confetti()">Open My Letter 💌</button>
+  </div>
+
+  <div class="card" style="text-align:center">
+    <h2 style="text-align:center">🎁 Tap To Claim Your Wishes</h2>
+    <span class="pill">🕊️ Long Life</span>
+    <span class="pill">💰 More Blessings</span>
+    <span class="pill">😂 More Laughter</span>
+    <span class="pill">❤️ Good Health</span>
+    <button class="btn btn-white" onclick="confetti();alert('Happy Birthday Dad! Your blessings are sealed! 🎉')">Blow The Candles 🎂</button>
+  </div>
+
+  <div class="footer">Made with love, only for Dad ❤️<br>Happy Birthday!</div>
+</div>
+
+<script>
+function confetti(){
+  const e=['🎉','🎈','🎂','❤️','⭐','✨','🎊'];
+  for(let i=0;i<60;i++){
+    const s=document.createElement('div');s.className='confetti';s.textContent=e[Math.floor(Math.random()*e.length)];
+    s.style.left=Math.random()*100+'vw';s.style.fontSize=(Math.random()*18+16)+'px';s.style.animationDuration=(Math.random()*2+2)+'s';
+    document.body.appendChild(s);setTimeout(()=>s.remove(),4000);
+  }
+}
+</script>
+</body>
+</html>
